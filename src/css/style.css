@@ -1,0 +1,511 @@
+:root {
+	--color-primary: #ffecd1;
+	--color-primary-darker: #fdcb6e;
+	--color-secondary: #e74c3c;
+	--color-secondary-darker: #d63031;
+	--color-tertiary: #f6e58d;
+	--color-tertiary-darker: #2d3436;
+}
+
+body {
+	font-family: 'Lora', serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--color-primary);
+}
+
+ul {
+	margin: 5px;
+}
+
+.app {
+	display: flex;
+	height: 100vh;
+}
+
+.btn {
+	display: inline-block;
+	padding: 8px 15px;
+	background-color: var(--color-secondary);
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+button[disabled] {
+	background-color: #707070;
+}
+
+button[disabled]:hover {
+	background-color: #707070;
+	cursor: initial;
+}
+
+.btn:hover {
+	background-color: var(--color-secondary-darker);
+}
+
+.logo--container {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.logo {
+	width: 125px;
+	height: 125px;
+}
+
+.filter.visible {
+	display: block;
+}
+
+.filter {
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.description__content {
+	font-size: 16px;
+	display: flex;
+  flex-direction: column;
+	height: 90%;
+}
+
+.content {
+	border: 10px solid;
+	border-radius: 25px;
+	padding: 10px;
+	margin: 25px auto;
+	box-sizing: border-box;
+	width: 100%;
+	height: 94%;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.locations__container {
+	flex: 1;
+  padding: 20px;
+  box-sizing: content-box;
+  position: fixed;
+  top: 0;
+  left: 33%;
+  bottom: 0;
+  width: 67%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+	height: 100%;
+}
+
+.container {
+	position: absolute;
+	transition: transform 1s;
+}
+
+.container--map {
+	background-color: white;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	height: 94%; 
+}
+
+.container--description {
+	background-color: var(--color-tertiary);
+	color: var(--color-tertiary-darker);
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	height: 94%;
+}
+
+.btn--description-control {
+	width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar__row--slider {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 33%;
+	height: 100vh;
+	background-color: var(--color-primary-darker);
+  	color: #2d3436;
+  	padding: 20px;
+  	box-sizing: border-box;
+  	overflow-y: hidden;
+}
+
+.sidebar {
+	text-align: center;
+	width: 33%;
+	background-color: var(--color-primary-darker);
+	color: #2d3436;
+	padding: 20px;
+	box-sizing: border-box;
+	height: 120vh;
+	overflow-y: hidden;
+	position: relative;
+}
+
+.sidebar__row {
+	margin-bottom: 15px;
+	transition: transform 1s;
+	width: 90%;
+	position: absolute;
+	height: 90%;
+}
+
+.sidebar__row--arrows:hover {
+	cursor: pointer;
+}
+
+/* SLIDER */
+.slider {
+  height: 40rem;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+	scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s ease-in-out;
+}
+
+.slide__item {
+	border: 5px solid black;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background-color: #f6e58d;
+}
+
+.slide--studios .slide__item {
+    border-color: #4497cd;
+}
+
+.slide--events .slide__item {
+	border-color: #ce2354;
+}
+
+.slide__item:hover, .selected {
+	border-radius: 25px;
+	background-color: var(--color-primary);
+}
+
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slider__arrow {
+	height: 25px;
+	margin: 5px 0;
+}
+
+/* MODAL AND OVERLAY */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: #f3f3f3;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.btn--filter-apply {
+margin: auto;
+}
+
+.form-container{
+	margin: 20px 50px;
+text-align: left;
+}
+
+.form-control {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.form-control label {
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+.form-control input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid red;
+	border-radius: 4px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.form-control input[type="checkbox"]:checked {
+	background-color: red;
+	border-color: red;
+}
+
+.form-control input[type="checkbox"]:focus {
+	outline: none;
+}
+
+.form__label {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+/* Details box */
+/* Studio Details */
+.content--studio-name {
+	font-size: 24px;
+	font-weight: bold;
+	color: #007bff; /* Blueish color */
+  }
+
+  .content--studio-description {
+	padding: 0 100px;
+	text-align: center;
+  }
+  
+  .studio-description {
+	margin-top: 10px;
+	font-size: 16px;
+	font-style: italic;
+	font-size: 1.8em;
+  }
+  
+  .content--studio-types,
+  .content--studio-type,
+  .content--studio-dance-types,
+  .content--studio-working-times,
+  .content--studio-address,
+  .content--studio-page,
+  .content--studio-phone {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+  }
+  
+  .content--studio-type-item,
+  .content--studio-dance-type-item,
+  .content--studio-working-time-item {
+	list-style: disc;
+	font-size: 20px;
+	margin-left: 20px;
+	font-style: italic;
+	color: #1100ff;
+  }
+
+  .studio-address,
+  .studio-type,
+  .studio-page,
+  .studio-phone {
+	margin-left: 20px;
+	font-style: italic;
+	color: #1100ff;
+  }
+  
+  /* Dance Event Details */
+  .content--dance-event-title {
+	font-size: 24px;
+	font-weight: bold;
+	color: red; /* Reddish color */
+  }
+  
+  .content--dance-event-description {
+		padding: 0 100px;
+		text-align: center;
+  }
+
+	.dance-event-description {
+	margin-top: 10px;
+	font-size: 16px;
+	font-style: italic;
+	font-size: 1.8em;
+  }
+  
+  .content--dance-event-type,
+  .content--dance-event-dances,
+  .content--dance-event-dance,
+  .content--dance-event-event-time,
+	.content--dance-event-address,
+  .content--dance-event-start-time,
+  .content--dance-event-end-time {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+  }
+
+	.dance-event-address,
+  .dance-event-dance,
+	.dance-event-type,
+	.dance-event-start-time,
+	.dance-event-end-time {
+	margin-left: 20px;
+	font-style: italic;
+	color: red;
+  }
+  
+  .dance--event-dance-item {
+		list-style: disc;
+		font-size: 20px;
+		margin-left: 20px;
+		font-style: italic;
+		font-weight: bold;
+		color: rgb(255, 0, 0);
+  }
+  
+/* popup style */
+  .dance-studio {
+	border: 5px solid #007bff;
+	border-style: groove;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 0;
+  }
+
+  .dance-studio h3 {
+	position: relative;
+	display: inline-block;
+	padding: 5px 2px;
+	background-color: #007bff;
+	color: white;
+	font-style: italic;
+  }
+
+  .dance-studio h3::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	animation: wave 2s infinite linear;
+	transform: translateX(-100%);
+  }
+  
+  @keyframes wave {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(100%);
+	}
+  }
+
+  .dance-event--party, 
+  .dance-event--festival, 
+  .dance-event--workshop {
+	border: 5px solid;
+	border-style: groove;
+	border-radius: 15px;
+	padding: 10px;
+	margin: 0;
+  }
+
+  .dance-event--party {
+	border-color: orange;
+  }
+
+  .dance-event--festival {
+	border-color: red;
+  }
+
+  .dance-event--workshop {
+	border-color: orangered
+  }
+
+  .dance-event--party h3,
+  .dance-event--festival h3,
+  .dance-event--workshop h3 {
+	position: relative;
+	display: inline-block;
+	padding: 5px 2px;
+	color: white;
+	font-style: italic;
+  }
+
+  .dance-event--party h3{
+	background-color: orange;
+  }
+
+  .dance-event--festival h3 {
+	background-color: red;
+  }
+
+  .dance-event--workshop h3 {
+	background-color: orangered
+  }
+
+  .dance-event--party h3::before,
+  .dance-event--festival h3::before,
+  .dance-event--workshop h3::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+	animation: wave 2s infinite linear;
+	transform: translateX(-100%);
+  }

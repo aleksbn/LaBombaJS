@@ -1,0 +1,390 @@
+{
+	"filtersSelected": {
+		"events": {
+			"party": true,
+			"festival": true,
+			"workshop": true
+		},
+		"dances": {
+			"salsa": true,
+			"bachata": true,
+			"kizomba": true,
+			"tango": true,
+			"reggaeton": true,
+			"zumba": true,
+			"rumba": true,
+			"samba": true
+		},
+		"types": {
+			"club": true,
+			"school": true,
+			"studio": true
+		}
+	},
+	"filters": {
+		"events": ["party", "festival", "workshop"],
+		"dances": ["salsa", "bachata", "kizomba", "tango", "reggaeton", "zumba", "samba"],
+		"types": ["club", "school", "studio"]
+	},
+	"danceEvents": [{
+			"id": 986247812,
+			"organizerId": 852147,
+			"type": "party",
+			"title": "Grande Latino Party",
+			"description": "Come to our grande latino party and enjoy dancing most popular latino dances! Two floors, salsa and sensual, are awaiting!",
+			"dances": [
+				"salsa",
+				"bachata",
+				"kizomba"
+			],
+			"address": "Svetog Save 60, Bijeljina 76300",
+			"coords": [
+				44.756244,
+				19.2117792
+			],
+			"start": "2023-09-26T21:00:00",
+			"end": "2023-09-27T03:00:00"
+		},
+		{
+			"id": 512479632,
+			"organizerId": 852147,
+			"type": "party",
+			"title": "Grande Latino Party",
+			"description": "Come to our grande latino party and enjoy dancing most popular latino dances! Two floors, salsa and sensual, are awaiting!",
+			"dances": [
+				"salsa",
+				"bachata",
+				"kizomba"
+			],
+			"address": "Patrijarha Pavla 1, Bijeljina 76300",
+			"coords": [
+				44.7568797,
+				19.2174305
+			],
+			"start": "2023-11-15T21:00:00",
+			"end": "2023-11-16T03:00:00"
+		},
+		{
+			"id": 256789654,
+			"organizerId": 852147,
+			"type": "party",
+			"title": "Sensual party",
+			"description": "Hola, sensual gente! Come join us on our sensual floor and dance bachata and kizomba!",
+			"dances": [
+				"bachata",
+				"kizomba"
+			],
+			"address": "Gavrila Principa, Bijeljina 76300",
+			"coords": [
+				44.7562342,
+				19.2139896
+			],
+			"start": "2023-10-19T21:00:00",
+			"end": "2023-10-20T03:00:00"
+		},
+		{
+			"id": 112489632,
+			"organizerId": 852147,
+			"type": "festival",
+			"title": "Салаш Salsa fest",
+			"description": "Did you ever want to try out native serbian cousine, dance to the sunset by the pool and enjoy the best coctails? Well, in that case, Салаш Salsa Fest is just for you!",
+			"dances": [
+				"salsa",
+				"bachata",
+				"kizomba"
+			],
+			"address": "Pavlovića put, Dvorovi 76300",
+			"coords": [
+				44.7860709,
+				19.2779482
+			],
+			"start": "2024-06-14T21:00:00",
+			"end": "2024-06-17T05:00:00"
+		},
+		{
+			"id": 220158962,
+			"organizerId": 852147,
+			"type": "workshop",
+			"title": "Don Marko y su Salsa Familia Workshop",
+			"description": "Join us and learn from the best! Don Marko y su Salsa Familia are one of the best dance schools in Belgrade for the past 10 years!",
+			"dances": [
+				"salsa"
+			],
+			"address": "Srpske vojske 2, Bijeljina 76300",
+			"coords": [
+				44.7543854,
+				19.2171592
+			],
+			"start": "2023-12-12T12:00:00",
+			"end": "2023-12-12T14:00:00"
+		},
+		{
+			"id": 885792105,
+			"organizerId": 758962,
+			"type": "workshop",
+			"title": "El grande tango",
+			"description": "We have an honor of bringing Tango world champions, Vedran and Valentina from Sarajevo, to Bijeljina for their amazing workshop!",
+			"dances": [
+				"tango"
+			],
+			"address": "Gradski park, Bijeljina 76300",
+			"coords": [
+				44.7546408,
+				19.2200756
+			],
+			"start": "2023-09-19T12:00:00",
+			"end": "2023-09-19T15:00:00"
+		},
+		{
+			"id": 962358956,
+			"organizerId": 748512,
+			"type": "workshop",
+			"title": "Freedom is in elegance",
+			"description": "Ilya Gavrikov and Liza Semashko are world rumba champions! Seize this amazing opportunity to dance and learn rumba from the best!",
+			"dances": [
+				"rumba"
+			],
+			"address": "Njegoševa 8, Bijeljina 76300",
+			"coords": [
+				44.7596387,
+				19.2187028
+			],
+			"start": "2023-11-22T14:00:00",
+			"end": "2023-11-22T16:00:00"
+		},
+		{
+			"id": 124555789,
+			"organizerId": 125967,
+			"type": "workshop",
+			"title": "El fuego Brasiliero",
+			"description": "Ever wanted to learn samba from the world champions? Well, Riccardo Cocchi and Yulia Zagoruychenko are holding workshop in Bijeljina!",
+			"dances": [
+				"samba"
+			],
+			"address": "Sremska, Bijeljina 76300",
+			"coords": [
+				44.7613323,
+				19.2017821
+			],
+			"start": "2024-02-26T14:00:00",
+			"end": "2024-02-26T17:00:00"
+		},
+		{
+			"id": 221447963,
+			"organizerId": 125967,
+			"type": "party",
+			"title": "Feel the energy",
+			"description": "Feel the pure energy of reggaeton while dancing with us on our party!",
+			"dances": [
+				"reggaeton"
+			],
+			"address": "Majora Dragutina Gavrilovića 3, Bijeljina 76300",
+			"coords": [
+				44.7571576,
+				19.2121159
+			],
+			"start": "2024-01-04T21:00:00",
+			"end": "2024-01-05T03:00:00"
+		},
+		{
+			"id": 332665547,
+			"organizerId": 521747,
+			"type": "workshop",
+			"title": "Zumba workshop",
+			"description": "Guess what, everyone? Rina Elena is coming to Bijeljina! Don't miss out on this great opportunity to learn a few moves from her!",
+			"dances": [
+				"zumba"
+			],
+			"address": "Sremska 4, Bijeljina 76300",
+			"coords": [
+				44.7626719,
+				19.2097289
+			],
+			"start": "2024-03-03T12:00:00",
+			"end": "2024-03-03T14:00:00"
+		}
+	],
+	"danceStudios": [{
+			"id": 758962,
+			"name": "101 dance club",
+			"address": "Ive Andrića, Bijeljina 76300",
+			"coords": [
+				44.7613323,
+				19.2017821
+			],
+			"type": [
+				"club",
+				"studio"
+			],
+			"danceTypes": [
+				"tango",
+				"reggaeton",
+				"rumba",
+				"zumba",
+				"samba"
+			],
+			"pageUrl": "https://www.facebook.com/plesniklub101/",
+			"phoneNumber": "065/111-222",
+			"description": "Više od tri decenije rada su garancija da cete sa nama naučiti sve vrste plesova.",
+			"workingTimes": [{
+					"day": "Monday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				},
+				{
+					"day": "Tuesday",
+					"startTime": "19:00:00",
+					"endTime": "20:00:00"
+				},
+				{
+					"day": "Thursday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				}
+			]
+		},
+		{
+			"id": 125967,
+			"name": "Megadance dance club",
+			"address": "Patrijarha Pavla 1, Bijeljina 76300",
+			"coords": [
+				44.7568797,
+				19.2174305
+			],
+			"type": [
+				"club",
+				"studio"
+			],
+			"danceTypes": [
+				"salsa",
+				"bachata",
+				"tango",
+				"reggaeton",
+				"rumba",
+				"zumba",
+				"samba"
+			],
+			"pageUrl": "https://www.facebook.com/MegadanceDanceStudio/",
+			"phoneNumber": "065/333-444",
+			"description": "MEGADANCE plesni studio nudi vam različite vrste plesova, profesionalnog (takmičarskog) i rekreativno-socijalnog.",
+			"workingTimes": [{
+					"day": "Friday",
+					"startTime": "12:00:00",
+					"endTime": "22:00:00"
+				},
+				{
+					"day": "Saturday",
+					"startTime": "12:00:00",
+					"endTime": "22:00:00"
+				},
+				{
+					"day": "Sunday",
+					"startTime": "12:00:00",
+					"endTime": "22:00:00"
+				}
+			]
+		},
+		{
+			"id": 852147,
+			"name": "El Ritmo Loco škola plesa",
+			"address": "Srpske Vojske 2, Bijeljina 76300",
+			"coords": [
+				44.7543854,
+				19.2171592
+			],
+			"type": [
+				"school",
+				"studio"
+			],
+			"danceTypes": [
+				"salsa",
+				"bachata",
+				"kizomba",
+				"reggaeton"
+			],
+			"pageUrl": "https://www.instagram.com/elritmolocosalsa/?hl=en",
+			"phoneNumber": "065/555-666",
+			"description": "Plesom do zvezda 💃🕺⭐⭐⭐, ili makar do dobre zabave!",
+			"workingTimes": [{
+					"day": "Tuesday",
+					"startTime": "19:00:00",
+					"endTime": "21:00:00"
+				},
+				{
+					"day": "Thursday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				},
+				{
+					"day": "Saturday",
+					"startTime": "16:00:00",
+					"endTime": "18:00:00"
+				}
+			]
+		},
+		{
+			"id": 521747,
+			"name": "ZumFit dance studio",
+			"address": "Njegoseva bb, Bijeljina 76300",
+			"coords": [
+				44.7596387,
+				19.2187028
+			],
+			"type": [
+				"studio"
+			],
+			"danceTypes": [
+				"reggaeton",
+				"zumba"
+			],
+			"pageUrl": "https://www.facebook.com/profile.php?id=100052848158383",
+			"phoneNumber": "065/777-888",
+			"description": "ZUMBA je spoj latinskih i internacionalnih ritmova koji uz tematski ples stvaraju dinamičan, uzbudljiv i eksplozivan osjecaj.",
+			"workingTimes": [{
+					"day": "Tuesday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				},
+				{
+					"day": "Thursday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				}
+			]
+		},
+		{
+			"id": 748512,
+			"name": "Olena dance studio",
+			"address": "Ive Andrića 56, Bijeljina 76300",
+			"coords": [
+				44.7615958,
+				19.20176
+			],
+			"type": [
+				"club",
+				"studio"
+			],
+			"danceTypes": [
+				"salsa",
+				"bachata",
+				"reggaeton",
+				"zumba",
+				"rumba"
+			],
+			"pageUrl": "",
+			"phoneNumber": "065/999-000",
+			"description": "Trust us, everyone can dance.",
+			"workingTimes": [{
+					"day": "Wednesday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				},
+				{
+					"day": "Sunday",
+					"startTime": "20:00:00",
+					"endTime": "21:00:00"
+				}
+			]
+		}
+	]
+}

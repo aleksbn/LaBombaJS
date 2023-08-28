@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "name": "labombajs",
+  "version": "1.0.0",
+  "description": "A small dance events application",
+  "main": "script.js",
+  "author": "Alex",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
