@@ -5,7 +5,11 @@
   "name": "labombajs",
   "version": "1.0.0",
   "description": "A small dance events application",
-  "main": "script.js",
+  "default": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
   "author": "Alex",
   "license": "ISC",
   "dependencies": {
