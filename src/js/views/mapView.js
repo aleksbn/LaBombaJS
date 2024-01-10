@@ -1,6 +1,5 @@
 import * as model from '../model.js';
-import placeholderIconUrl from '../icon';
-import { DEFAULT_ANIMATION_DURATION, MAP_ZOOM_LEVEL } from '../config';
+import { DEFAULT_ANIMATION_DURATION, MAP_ZOOM_LEVEL } from '../config.js';
 
 class MapView {
   _parentElement = document.querySelector('.description__content');
@@ -21,20 +20,24 @@ class MapView {
 
   _generateEventMarker(e) {
     return `<div class="dance-event--${e.type}" data-id="${e.id}" >
-    <div style="text-align: center;"><h3>${e.title}</h3></div>
+    <div style="text-align: center;"><h3 class="event-marker--title">${
+      e.title
+    }</h3></div>
     <hr>
-      <div>Organized by: <b>${
+      <div class="event-marker--organiser">Organized by: <b>${
         model.state.danceStudios.find(ds => ds.id === e.organizerId).name
       }</b></div><hr>
-      <div style="text-align: center;"><b>${e.type}</b></div><hr>
-      <div><b>${new Intl.DateTimeFormat('sr-SR').format(
-        new Date(e.start.split('T')[0])
-      )} ${e.start.split('T')[1].slice(0, -3)} - ${new Intl.DateTimeFormat(
-      'sr-SR'
-    ).format(new Date(e.end.split('T')[0]))} ${e.end
+      <div class="event-marker--type" style="text-align: center;"><b>${
+        e.type
+      }</b></div><hr>
+      <div class="event-marker--time"><b>${new Intl.DateTimeFormat(
+        'sr-SR'
+      ).format(new Date(e.start.split('T')[0]))} ${e.start
       .split('T')[1]
-      .slice(0, -3)}</b></div><hr>
-        <div>Dances: <b>${e.dances.reduce(
+      .slice(0, -3)} - ${new Intl.DateTimeFormat('sr-SR').format(
+      new Date(e.end.split('T')[0])
+    )} ${e.end.split('T')[1].slice(0, -3)}</b></div><hr>
+        <div class="event-marker--dances">Dances: <b>${e.dances.reduce(
           (cur, acc) => acc + ', ' + cur
         )}</b></div>
         </div>`;
@@ -43,8 +46,12 @@ class MapView {
   _generateStudioMarker(s) {
     return `<div class="dance-studio" data-id="${
       s.id
-    }" ><div style="text-align: center;"><h3>${s.name}</h3></div>
-    <hr><b>Dance ${s.type.reduce((cur, acc) => acc + ', dance ' + cur)}</b><br>
+    }"><div class="studio-marker--name" style="text-align: center;"><h3>${
+      s.name
+    }</h3></div>
+    <hr><div class="studio-marker--type"><b>Dance ${s.type.reduce(
+      (cur, acc) => acc + ', dance ' + cur
+    )}</b></div><div class="studio-marker--address">
       <hr><b>${s.address}</b><hr></div>`;
   }
 
@@ -52,7 +59,7 @@ class MapView {
     this._mapMarkers = [];
     studios.forEach(ds => {
       const marker = L.marker(ds.coords, {
-        maxWidth: 300,
+        maxWidth: 500,
         minWidth: 100,
         riseOnHover: true,
       })
@@ -66,14 +73,14 @@ class MapView {
   loadEventsToMap(events) {
     this._mapMarkers = [];
     let customIcon = L.icon({
-      iconUrl: placeholderIconUrl,
+      iconUrl: '../../../media/placeholder.png',
       iconSize: [35, 35],
       popupAnchor: [0, -15],
     });
     events.forEach(de => {
       const marker = L.marker(de.coords, {
         icon: customIcon,
-        maxWidth: 400,
+        maxWidth: 600,
         minWidth: 100,
         riseOnHover: true,
       })

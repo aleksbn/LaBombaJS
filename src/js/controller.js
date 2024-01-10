@@ -45,6 +45,7 @@ const controlMapView = function () {
   mapView.map.on('click', function () {
     clearAllListElements();
     locationContainerView.toggleIfButtonIsDisabled(true);
+    closeDescriptionButton();
   });
 };
 
@@ -55,6 +56,10 @@ const controlFiltersView = function () {
 const controlSliderView = function (e) {
   // add "stopping the wheel" event
   sliderView.stopsTheWheel(e);
+};
+
+const controlToggleSidebar = function () {
+  sidebarView.toggleSidebar();
 };
 
 const controlSliderArrowsView = function (dir) {
@@ -115,6 +120,8 @@ const controlSliderEventsViewClick = function (e) {
 
   // clear previous highlighted element
   clearAllListElements();
+  locationContainerView.toggleIfButtonIsDisabled(true);
+  closeDescriptionButton();
 
   // highlighting element (sliderEventsView)
   highlightListElement(el.dataset.id);
@@ -137,17 +144,25 @@ const controlSliderStudiosViewClick = function (e) {
 
   // clear previous highlighted element
   clearAllListElements();
+  locationContainerView.toggleIfButtonIsDisabled(true);
+  closeDescriptionButton();
 
   // highlighting element (sliderEventsView)
   highlightListElement(el.dataset.id);
 };
 
-const controlDescriptionViewClick = function () {
-  // check if data should be displayed
+const closeDescriptionButton = function () {
   const descriptionContent = document.querySelector('.description__content');
-  if (
-    document.querySelector('.description__content').classList.contains('hidden')
-  ) {
+  // hides details data
+  locationContainerView.goToContainer(0);
+  setTimeout(() => {
+    descriptionContent.classList.add('hidden');
+  }, 1000);
+};
+
+const controlDescriptionViewClick = function () {
+  const descriptionContent = document.querySelector('.description__content');
+  if (descriptionContent.classList.contains('hidden')) {
     // load details
     const id = +model.state.selectedId;
     const data =
@@ -193,7 +208,7 @@ const clearAllListElements = function () {
   mapView.closeAllMarkers();
 };
 
-const addClickEventToMapMarkers = function() {
+const addClickEventToMapMarkers = function () {
   mapMarkers.forEach(marker =>
     marker.on('click', function () {
       const id = +marker
@@ -206,7 +221,7 @@ const addClickEventToMapMarkers = function() {
       highlightListElement(id, 'marker');
     })
   );
-}
+};
 
 const init = function () {
   window.addEventListener('scroll', () => {
@@ -229,6 +244,7 @@ const init = function () {
   sliderArrowsView.addHandlerArrowClick(controlSliderArrowsView, 'left');
   sliderArrowsView.addHandlerArrowClick(controlSliderArrowsView, 'right');
   sidebarView.addHandlerToggleFilters(controlSidebarViewToggleFilters);
+  sidebarView.addHandlerToggleSidebar(controlToggleSidebar);
   filtersView.addHandlerClickApply(controlApplyFilters);
   sliderEventsView.addHandlerClick(controlSliderEventsViewClick);
   sliderStudiosView.addHandlerClick(controlSliderStudiosViewClick);

@@ -1,10 +1,13 @@
-import { DEFAULT_ANIMATION_DURATION } from "../config";
+import { DEFAULT_ANIMATION_DURATION } from '../config.js';
 
 class SidebarView {
   _curSlideOfSidebar = 0;
+  _curSliderPosition = -1;
   _rootElement = document.querySelector('.sidebar');
   _sidebarRows = document.querySelectorAll('.sidebar__row');
   _toggleFiltersButton = document.querySelector('.btn--toggle-filters');
+  _toggleButton = document.querySelector('.show-hide-btn');
+  _showHideArrows = Array.from(document.querySelectorAll('.show-hide-arrow'));
 
   constructor() {
     this._sidebarRows.forEach(
@@ -15,6 +18,24 @@ class SidebarView {
 
   addHandlerToggleFilters(handler) {
     this._toggleFiltersButton.addEventListener('click', handler);
+  }
+
+  addHandlerToggleSidebar(handler) {
+    this._toggleButton.addEventListener('click', handler);
+  }
+
+  toggleSidebar() {
+    console.log(this._rootElement.clientWidth);
+    this._curSliderPosition = this._curSliderPosition === -1 ? 0 : -1;
+    this._rootElement.style.transform = `translateX(${
+      this._curSliderPosition * 100
+    }%)`;
+    this._toggleButton.style.transform = `translateX(${
+      (this._curSliderPosition + 1) * this._rootElement.clientWidth
+    }px)`;
+    this._showHideArrows.forEach(a => a.classList.toggle('excluded'));
+    console.log(this._rootElement);
+    console.log(this._curSliderPosition);
   }
 
   toggleSlider() {

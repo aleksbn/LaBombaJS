@@ -30,8 +30,7 @@ export const updateStudios = function () {
 
   return state.danceStudios
     .filter(s => s.type.some(type => selectedTypes.includes(type)))
-    .filter(s => s.danceTypes.some(dance => selectedDances.includes(dance))
-  );
+    .filter(s => s.danceTypes.some(dance => selectedDances.includes(dance)));
 };
 
 /**
@@ -52,10 +51,10 @@ export const updateEvents = function () {
     .filter(e => e.dances.some(dance => selectedDances.includes(dance)));
 };
 
-export const findElement = function(id) {
+export const findElement = function (id) {
   return id.length === 6
-      ? state.danceStudios.find(el => el.id === +id)
-      : state.danceEvents.find(el => el.id === +id);
-}
+    ? state.danceStudios.find(el => el.id === +id)
+    : state.danceEvents.find(el => el.id === +id);
+};
 
 init();

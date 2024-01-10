@@ -1,5 +1,5 @@
-import View from './view';
-import { CapitalCase } from '../helpers';
+import View from './view.js';
+import { CapitalCase } from '../helpers.js';
 
 class FiltersView extends View {
   _parentElement = document.querySelector('.form-container');
@@ -14,14 +14,14 @@ class FiltersView extends View {
   }
 
   _generateMarkup() {
-		let markup = '<div class="form-container--studios">';
-		markup += this._loadFilterParts('types');
-		markup += '</div><div class="form-container--type-of-events">';
-		markup += this._loadFilterParts('events');
-		markup += '</div><div class="form-container--dances">';
-		markup += this._loadFilterParts('dances') + '</div>';
-		return markup;
-	}
+    let markup = '<div class="form-container--studios">';
+    markup += this._loadFilterParts('types');
+    markup += '</div><div class="form-container--type-of-events">';
+    markup += this._loadFilterParts('events');
+    markup += '</div><div class="form-container--dances">';
+    markup += this._loadFilterParts('dances') + '</div>';
+    return markup;
+  }
 
   updateFilters(filters) {
     const checkboxes = [

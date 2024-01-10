@@ -34,6 +34,7 @@ class LocationContainerView {
   toggleIfButtonIsDisabled(enable) {
     if (enable) {
       this._toggleDisplayDescriptionButton.setAttribute('disabled', '');
+      this._toggleDisplayDescriptionButton.innerHTML = 'Display details';
     } else {
       this._toggleDisplayDescriptionButton.removeAttribute('disabled');
     }

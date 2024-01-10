@@ -1,4 +1,4 @@
-import View from './view';
+import View from './view.js';
 import * as model from '../model.js';
 
 class SliderEventsView extends View {

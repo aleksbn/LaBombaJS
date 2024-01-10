@@ -1,11 +1,11 @@
-import View from './view';
+import View from './view.js';
 
 class SliderView extends View {
-	_curSlide = 0;
+  _curSlide = 0;
   _parentElement = document.querySelector('.slider');
   _slides = document.querySelectorAll('.slide');
   _currentlyActiveSlideOfSlider = 'slide--studios';
-	_maxSlide = this._slides.length;
+  _maxSlide = this._slides.length;
 
   addHandlerWheel(handler) {
     this._parentElement.addEventListener('wheel', function (e) {

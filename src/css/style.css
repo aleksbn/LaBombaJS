@@ -1,96 +1,134 @@
 :root {
-	--color-primary: #ffecd1;
-	--color-primary-darker: #fdcb6e;
-	--color-secondary: #e74c3c;
-	--color-secondary-darker: #d63031;
-	--color-tertiary: #f6e58d;
-	--color-tertiary-darker: #2d3436;
+  --color-primary: #ffecd1;
+  --color-primary-darker: #fdcb6e;
+  --color-secondary: #e74c3c;
+  --color-secondary-darker: #d63031;
+  --color-tertiary: #f6e58d;
+  --color-tertiary-darker: #2d3436;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lora', sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: #222;
 }
 
 body {
-	font-family: 'Lora', serif;
-	margin: 0;
-	padding: 0;
-	background-color: var(--color-primary);
+  background-color: var(--color-primary);
+  position: relative;
 }
 
 ul {
-	margin: 5px;
+  margin: 0.5rem;
 }
 
 .app {
-	display: flex;
-	height: 100vh;
+  display: flex;
 }
 
 .btn {
-	display: inline-block;
-	padding: 8px 15px;
-	background-color: var(--color-secondary);
-	color: white;
-	border: none;
-	cursor: pointer;
-	border-radius: 4px;
-	transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.6rem;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease;
 }
 
 button[disabled] {
-	background-color: #707070;
+  background-color: #707070;
 }
 
 button[disabled]:hover {
-	background-color: #707070;
-	cursor: initial;
+  background-color: #707070;
+  cursor: initial;
 }
 
 .btn:hover {
-	background-color: var(--color-secondary-darker);
+  background-color: var(--color-secondary-darker);
 }
 
 .logo--container {
-	text-align: center;
-	margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .logo {
-	width: 125px;
-	height: 125px;
+  width: 12.5rem;
+  height: 12.5rem;
 }
 
 .filter.visible {
-	display: block;
+  display: block;
 }
 
 .filter {
-  padding: 15px;
+  padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
 }
 
+.filter form h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
 .description__content {
-	font-size: 16px;
-	display: flex;
+  font-size: 1.6rem;
+  display: flex;
   flex-direction: column;
-	height: 90%;
+  height: 90%;
 }
 
 .content {
-	border: 10px solid;
-	border-radius: 25px;
-	padding: 10px;
-	margin: 25px auto;
-	box-sizing: border-box;
-	width: 100%;
-	height: 94%;
+  border: 1rem solid;
+  border-radius: 2.5rem;
+  padding: 1rem;
+  margin: 2.5rem auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 94%;
 }
 
 .hidden {
-	visibility: hidden;
+  visibility: hidden;
+}
+
+.show-hide-btn {
+  position: fixed;
+  display: flex;
+  width: 5rem;
+  background-color: #fdcb6e;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-right: 1px solid #222;
+  border-radius: 0 1.2rem 1.2rem 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.excluded {
+  display: none;
 }
 
 .locations__container {
-	flex: 1;
-  padding: 20px;
+  flex: 1;
+  padding: 2rem;
   box-sizing: content-box;
   position: fixed;
   top: 0;
@@ -100,119 +138,149 @@ button[disabled]:hover {
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-	height: 100%;
+  height: 100%;
 }
 
 .container {
-	position: absolute;
-	transition: transform 1s;
+  position: absolute;
+  transition: transform 1s;
+}
+
+.form-container label {
+  font-size: 1.8rem;
+}
+
+.form-control label {
+  font-size: 1.6rem;
 }
 
 .container--map {
-	background-color: white;
-	padding: 20px;
-	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	width: 90%;
-	height: 94%; 
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+  width: 95%;
+  height: 94%;
 }
 
 .container--description {
-	background-color: var(--color-tertiary);
-	color: var(--color-tertiary-darker);
-	padding: 20px;
-	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	width: 90%;
-	height: 94%;
+  background-color: var(--color-tertiary);
+  color: var(--color-tertiary-darker);
+  padding: 2rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  width: 95%;
+  height: 94%;
 }
 
 .btn--description-control {
-	width: 100%;
+  width: 100%;
 }
-
-/* SIDEBAR */
+/***********************************************/
+/******************** SIDEBAR ******************/
+/***********************************************/
 .sidebar__row--slider {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 33%;
-	height: 100vh;
-	background-color: var(--color-primary-darker);
-  	color: #2d3436;
-  	padding: 20px;
-  	box-sizing: border-box;
-  	overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 33%;
+  height: 100vh;
+  background-color: var(--color-primary-darker);
+  color: #2d3436;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .sidebar {
-	text-align: center;
-	width: 33%;
-	background-color: var(--color-primary-darker);
-	color: #2d3436;
-	padding: 20px;
-	box-sizing: border-box;
-	height: 120vh;
-	overflow-y: hidden;
-	position: relative;
+  text-align: center;
+  transform: translateX(0);
+  width: 33%;
+  background-color: var(--color-primary-darker);
+  color: #2d3436;
+  padding: 2rem;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 500;
 }
 
 .sidebar__row {
-	margin-bottom: 15px;
-	transition: transform 1s;
-	width: 90%;
-	position: absolute;
-	height: 90%;
+  margin-bottom: 1.5rem;
+  transition: transform 1s;
+  width: 100%;
+  position: absolute;
+  height: 95%;
 }
 
 .sidebar__row--arrows:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
-/* SLIDER */
+.btn--toggle-filters {
+  margin-bottom: 1rem;
+}
+
+/***********************************************/
+/*************** SLIDER ************************/
+/***********************************************/
 .slider {
-  height: 40rem;
+  height: 80%;
   margin: 0 auto;
   position: relative;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
   transition: scroll-behavior 0.5s ease-in-out;
 }
 
 .slide__item {
-	border: 5px solid black;
-	border-radius: 10px;
-	padding: 20px;
-	margin-bottom: 10px;
-	cursor: pointer;
-	transition: all 0.2s ease;
-	background-color: #f6e58d;
+  border: 0.5rem solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f6e58d;
+  font-size: 1.6rem;
+}
+
+.slide__item h2 {
+  font-size: 2.4rem;
+  padding-bottom: 1rem;
+}
+
+.slide__item h3 {
+  font-size: 1.8rem;
+  padding-bottom: 1rem;
 }
 
 .slide--studios .slide__item {
-    border-color: #4497cd;
+  border-color: #4497cd;
 }
 
 .slide--events .slide__item {
-	border-color: #ce2354;
+  border-color: #ce2354;
 }
 
-.slide__item:hover, .selected {
-	border-radius: 25px;
-	background-color: var(--color-primary);
+.slide__item:hover,
+.selected {
+  border-radius: 2.5rem;
+  background-color: var(--color-primary);
 }
 
 .slider::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .slide {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 50rem;
+  height: 5rem;
 
   display: block;
   align-items: center;
@@ -222,23 +290,44 @@ button[disabled]:hover {
   transition: transform 1s;
 }
 
-.slider__arrow {
-	height: 25px;
-	margin: 5px 0;
+.slide h3 {
+  font-size: 2.4rem;
 }
 
-/* MODAL AND OVERLAY */
+.slider__arrow {
+  height: 2.5rem;
+  margin: 1rem 0;
+}
+
+/***********************************************/
+/************** MODAL AND OVERLAY **************/
+/***********************************************/
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 60rem;
+  max-width: 120rem;
+  font-size: 1.8rem;
   background-color: #f3f3f3;
-  padding: 5rem 6rem;
+  padding: 6.4rem 8rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: all 0.5s;
+  border-radius: 4rem;
+  line-height: 1.5;
+}
+
+.modal h2 {
+  padding-bottom: 2rem;
+}
+
+.modal p {
+  padding-bottom: 1.2rem;
+}
+
+.modal button {
+  margin-top: 2rem;
 }
 
 .overlay {
@@ -248,7 +337,7 @@ button[disabled]:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.4rem);
   z-index: 100;
   transition: all 0.5s;
 }
@@ -257,255 +346,339 @@ button[disabled]:hover {
   font-family: inherit;
   color: inherit;
   position: absolute;
-  top: 0.5rem;
+  top: 2rem;
   right: 2rem;
   font-size: 3rem;
   cursor: pointer;
   border: none;
   background: none;
+  border-radius: 0 2rem 0 0;
 }
 
 .btn--filter-apply {
-margin: auto;
+  margin: auto;
 }
 
-.form-container{
-	margin: 20px 50px;
-text-align: left;
+.form-container {
+  margin: 2.4rem 5rem;
+  text-align: left;
 }
 
 .form-control {
-	display: flex;
-	align-items: center;
-	margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .form-control label {
-	margin-left: 10px;
-	font-weight: bold;
+  margin-left: 1rem;
+  font-weight: bold;
 }
 
-.form-control input[type="checkbox"] {
-	appearance: none;
-	-webkit-appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 2px solid red;
-	border-radius: 4px;
-	margin: 0;
-	cursor: pointer;
+.form-control input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 0.2rem solid red;
+  border-radius: 0.4rem;
+  margin: 0;
+  cursor: pointer;
 }
 
-.form-control input[type="checkbox"]:checked {
-	background-color: red;
-	border-color: red;
+.form-control input[type='checkbox']:checked {
+  background-color: red;
+  border-color: red;
 }
 
-.form-control input[type="checkbox"]:focus {
-	outline: none;
+.form-control input[type='checkbox']:focus {
+  outline: none;
 }
 
 .form__label {
-	display: block;
-	margin-top: 25px;
-	margin-bottom: 10px;
-	font-weight: bold;
+  display: block;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+/***********************************************/
+/**************** Details box ******************/
+/*************** Studio Details ****************/
+/***********************************************/
+.content--studio-name {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #007bff; /* Blueish color */
 }
 
-/* Details box */
-/* Studio Details */
-.content--studio-name {
-	font-size: 24px;
-	font-weight: bold;
-	color: #007bff; /* Blueish color */
+.content--studio-description {
+  padding: 0 10rem;
+  text-align: center;
+}
+
+.studio-description {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.content--studio-types,
+.content--studio-type,
+.content--studio-dance-types,
+.content--studio-working-times,
+.content--studio-address,
+.content--studio-page,
+.content--studio-phone {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.content--studio-type-item,
+.content--studio-dance-type-item,
+.content--studio-working-time-item {
+  list-style: disc;
+  font-size: 2rem;
+  margin-left: 2rem;
+  font-style: italic;
+  color: #1100ff;
+}
+
+.studio-address,
+.studio-type,
+.studio-page,
+.studio-phone {
+  margin-left: 2rem;
+  font-style: italic;
+  color: #1100ff;
+}
+/***********************************************/
+/************* Dance Event Details *************/
+/***********************************************/
+.content--dance-event-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: red;
+}
+
+.content--dance-event-description {
+  padding: 0 10rem;
+  text-align: center;
+}
+
+.dance-event-description {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+.content--dance-event-type,
+.content--dance-event-dances,
+.content--dance-event-dance,
+.content--dance-event-event-time,
+.content--dance-event-address,
+.content--dance-event-start-time,
+.content--dance-event-end-time {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.dance-event-address,
+.dance-event-dance,
+.dance-event-type,
+.dance-event-start-time,
+.dance-event-end-time {
+  margin-left: 2rem;
+  font-style: italic;
+  color: red;
+}
+
+.dance--event-dance-item {
+  list-style: disc;
+  font-size: 2rem;
+  margin-left: 2rem;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+}
+/***********************************************/
+/**************** popup style ******************/
+/***********************************************/
+.dance-studio {
+  border: 5px solid #007bff;
+  border-style: groove;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.dance-studio h3 {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0.2rem;
+  background-color: #007bff;
+  color: white;
+  font-style: italic;
+}
+
+.dance-studio h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: wave 2s infinite linear;
+  transform: translateX(-100%);
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.dance-event--party,
+.dance-event--festival,
+.dance-event--workshop {
+  border: 0.5rem solid;
+  border-style: groove;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 0;
+}
+
+.dance-event--party {
+  border-color: orange;
+}
+
+.dance-event--festival {
+  border-color: red;
+}
+
+.dance-event--workshop {
+  border-color: orangered;
+}
+
+.dance-event--party h3,
+.dance-event--festival h3,
+.dance-event--workshop h3 {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0.2rem;
+  color: white;
+  font-style: italic;
+}
+
+.dance-event--party h3 {
+  background-color: orange;
+}
+
+.dance-event--festival h3 {
+  background-color: red;
+}
+
+.dance-event--workshop h3 {
+  background-color: orangered;
+}
+
+.dance-event--party h3::before,
+.dance-event--festival h3::before,
+.dance-event--workshop h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: wave 2s infinite linear;
+  transform: translateX(-100%);
+}
+
+/***********************************************/
+/**************** MARKERS **********************/
+/***********************************************/
+.event-marker--title,
+.studio-marker--name {
+  font-size: 1.6rem;
+}
+
+.studio-marker--type,
+.studio-marker--address,
+.event-marker--title,
+.event-marker--organiser,
+.event-marker--type,
+.event-marker--dances,
+.event-marker--time {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1462px) {
+  html {
+    font-size: 50%;
+  }
+  .sidebar {
+    width: 25%;
+  }
+  .locations__container {
+    width: 75%;
+    left: 25%;
+  }
+  .slider {
+    height: 90%;
+  }
+}
+
+@media (max-width: 1125px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 50%;
+  }
+  .locations__container {
+    width: 96%;
+    height: 100%;
+    left: 4%;
   }
 
-  .content--studio-description {
-	padding: 0 100px;
-	text-align: center;
+  .show-hide-btn {
+    display: flex;
   }
-  
-  .studio-description {
-	margin-top: 10px;
-	font-size: 16px;
-	font-style: italic;
-	font-size: 1.8em;
-  }
-  
-  .content--studio-types,
-  .content--studio-type,
-  .content--studio-dance-types,
-  .content--studio-working-times,
-  .content--studio-address,
-  .content--studio-page,
-  .content--studio-phone {
-	margin-top: 10px;
-	font-size: 20px;
-	font-weight: bold;
-  }
-  
-  .content--studio-type-item,
-  .content--studio-dance-type-item,
-  .content--studio-working-time-item {
-	list-style: disc;
-	font-size: 20px;
-	margin-left: 20px;
-	font-style: italic;
-	color: #1100ff;
-  }
+}
 
-  .studio-address,
-  .studio-type,
-  .studio-page,
-  .studio-phone {
-	margin-left: 20px;
-	font-style: italic;
-	color: #1100ff;
+@media (max-width: 950px) {
+  .modal {
+    height: 50rem;
+    overflow: scroll;
+    width: 80%;
   }
-  
-  /* Dance Event Details */
-  .content--dance-event-title {
-	font-size: 24px;
-	font-weight: bold;
-	color: red; /* Reddish color */
-  }
-  
-  .content--dance-event-description {
-		padding: 0 100px;
-		text-align: center;
-  }
+}
 
-	.dance-event-description {
-	margin-top: 10px;
-	font-size: 16px;
-	font-style: italic;
-	font-size: 1.8em;
+@media (max-width: 588px) {
+  .sidebar {
+    width: 75%;
   }
-  
-  .content--dance-event-type,
-  .content--dance-event-dances,
-  .content--dance-event-dance,
-  .content--dance-event-event-time,
-	.content--dance-event-address,
-  .content--dance-event-start-time,
-  .content--dance-event-end-time {
-	margin-top: 10px;
-	font-size: 20px;
-	font-weight: bold;
-  }
+}
 
-	.dance-event-address,
-  .dance-event-dance,
-	.dance-event-type,
-	.dance-event-start-time,
-	.dance-event-end-time {
-	margin-left: 20px;
-	font-style: italic;
-	color: red;
+@media (max-width: 420px) {
+  .sidebar {
+    width: 90%;
   }
-  
-  .dance--event-dance-item {
-		list-style: disc;
-		font-size: 20px;
-		margin-left: 20px;
-		font-style: italic;
-		font-weight: bold;
-		color: rgb(255, 0, 0);
-  }
-  
-/* popup style */
-  .dance-studio {
-	border: 5px solid #007bff;
-	border-style: groove;
-	border-radius: 15px;
-	padding: 10px;
-	margin: 0;
-  }
-
-  .dance-studio h3 {
-	position: relative;
-	display: inline-block;
-	padding: 5px 2px;
-	background-color: #007bff;
-	color: white;
-	font-style: italic;
-  }
-
-  .dance-studio h3::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-	animation: wave 2s infinite linear;
-	transform: translateX(-100%);
-  }
-  
-  @keyframes wave {
-	0% {
-	  transform: translateX(-100%);
-	}
-	100% {
-	  transform: translateX(100%);
-	}
-  }
-
-  .dance-event--party, 
-  .dance-event--festival, 
-  .dance-event--workshop {
-	border: 5px solid;
-	border-style: groove;
-	border-radius: 15px;
-	padding: 10px;
-	margin: 0;
-  }
-
-  .dance-event--party {
-	border-color: orange;
-  }
-
-  .dance-event--festival {
-	border-color: red;
-  }
-
-  .dance-event--workshop {
-	border-color: orangered
-  }
-
-  .dance-event--party h3,
-  .dance-event--festival h3,
-  .dance-event--workshop h3 {
-	position: relative;
-	display: inline-block;
-	padding: 5px 2px;
-	color: white;
-	font-style: italic;
-  }
-
-  .dance-event--party h3{
-	background-color: orange;
-  }
-
-  .dance-event--festival h3 {
-	background-color: red;
-  }
-
-  .dance-event--workshop h3 {
-	background-color: orangered
-  }
-
-  .dance-event--party h3::before,
-  .dance-event--festival h3::before,
-  .dance-event--workshop h3::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-	animation: wave 2s infinite linear;
-	transform: translateX(-100%);
-  }
+}

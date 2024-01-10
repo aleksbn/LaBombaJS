@@ -1,4 +1,4 @@
-import View from './view';
+import View from './view.js';
 
 class DetailsView extends View {
   _parentElement = document.querySelector('.description__content');
