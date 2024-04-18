@@ -62,6 +62,7 @@ class MapView {
         maxWidth: 500,
         minWidth: 100,
         riseOnHover: true,
+        title: ds.name,
       })
         .addTo(this.map)
         .bindPopup(this._generateStudioMarker(ds));
@@ -73,7 +74,7 @@ class MapView {
   loadEventsToMap(events) {
     this._mapMarkers = [];
     let customIcon = L.icon({
-      iconUrl: '../../../media/placeholder.png',
+      iconUrl: './placeholder.c417ac6b.png',
       iconSize: [35, 35],
       popupAnchor: [0, -15],
     });
@@ -83,6 +84,7 @@ class MapView {
         maxWidth: 600,
         minWidth: 100,
         riseOnHover: true,
+        title: de.title,
       })
         .addTo(this.map)
         .bindPopup(this._generateEventMarker(de));

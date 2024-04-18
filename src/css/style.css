@@ -1,6 +1,6 @@
 :root {
   --color-primary: #ffecd1;
-  --color-primary-darker: #fdcb6e;
+  --color-primary-darker: #fcdfa9;
   --color-secondary: #e74c3c;
   --color-secondary-darker: #d63031;
   --color-tertiary: #f6e58d;
@@ -109,7 +109,7 @@ button[disabled]:hover {
   position: fixed;
   display: flex;
   width: 5rem;
-  background-color: #fdcb6e;
+  background-color: #fcdfa9;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -666,12 +666,14 @@ button[disabled]:hover {
 @media (max-width: 950px) {
   .modal {
     height: 50rem;
-    overflow: scroll;
     width: 80%;
   }
 }
 
 @media (max-width: 588px) {
+  .modal {
+    padding: 3.2rem 4rem;
+  }
   .sidebar {
     width: 75%;
   }
