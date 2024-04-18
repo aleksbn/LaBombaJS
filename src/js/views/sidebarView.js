@@ -25,7 +25,6 @@ class SidebarView {
   }
 
   toggleSidebar() {
-    console.log(this._rootElement.clientWidth);
     this._curSliderPosition = this._curSliderPosition === -1 ? 0 : -1;
     this._rootElement.style.transform = `translateX(${
       this._curSliderPosition * 100
@@ -34,8 +33,6 @@ class SidebarView {
       (this._curSliderPosition + 1) * this._rootElement.clientWidth
     }px)`;
     this._showHideArrows.forEach(a => a.classList.toggle('excluded'));
-    console.log(this._rootElement);
-    console.log(this._curSliderPosition);
   }
 
   toggleSlider() {
