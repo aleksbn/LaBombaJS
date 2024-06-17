@@ -223,7 +223,7 @@ const addClickEventToMapMarkers = function () {
   );
 };
 
-const init = async function () {
+const init = function () {
   window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     document.querySelector(
@@ -233,10 +233,6 @@ const init = async function () {
       '.sidebar__row--filter'
     ).style.top = `${scrollTop}px`;
   });
-
-  document.querySelector('.modal p').innerHTML = (
-    await (await fetch('https://api.adviceslip.com/advice')).json()
-  ).slip.advice;
 
   mapView.addHandlerLoad(controlMapView);
   sliderStudiosView.addHandlerRender(controlSliderStudiosView);
@@ -255,4 +251,11 @@ const init = async function () {
   locationContainerView.addHandlerClick(controlDescriptionViewClick);
 };
 
+const setAdvice = async function () {
+    document.querySelector('.modal p').innerHTML = (
+    await (await fetch('https://api.adviceslip.com/advice')).json()
+  ).slip.advice;
+}
+
 init();
+setAdvice();

@@ -74,7 +74,7 @@ class MapView {
   loadEventsToMap(events) {
     this._mapMarkers = [];
     let customIcon = L.icon({
-      iconUrl: './placeholder.c417ac6b.png',
+      iconUrl: '/placeholder.png',
       iconSize: [35, 35],
       popupAnchor: [0, -15],
     });

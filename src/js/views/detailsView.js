@@ -32,7 +32,7 @@ class DetailsView extends View {
       }
       markup += `<div class='content--studio-address'>Address: <span class='studio-address'>${this._data.address}</span></div>`;
       if (this._data.pageUrl !== '') {
-        markup += `<div class='content--studio-page'>Page URL: <a href='${studio.pageUrl}' target='_blank' class='studio-page'>${this._data.name}</a></div>`;
+        markup += `<div class='content--studio-page'>Page URL: <a href='${this._data.pageUrl}' target='_blank' class='studio-page'>${this._data.name}</a></div>`;
       } else {
         markup += `<div class='content--studio-page'>Page URL: <span class='studio-page'>They apparently have no page :(</span></div>`;
       }
