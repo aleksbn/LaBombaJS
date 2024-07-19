@@ -4,7 +4,6 @@ class DetailsView extends View {
   _parentElement = document.querySelector('.description__content');
 
   _generateMarkup() {
-    // console.log(this._data);
     let markup = '';
     if ((this._data.id + '').length === 6) {
       // STUDIO
