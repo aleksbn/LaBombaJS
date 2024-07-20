@@ -223,8 +223,9 @@ goToMarker(coords) {
           const markerId = +marker
             .getPopup()
             .getContent()
-            .split(' ')[2] // Split the content of the popup by spaces
-            .split('"')[1]; // Get the id from the split content
+            .split('data-id="')[1]
+            .split('"')[0]; // Get the id from the split content
+          
           if (markerId === +requiredId) marker.openPopup(); // Open the popup if the ids match
         });
       },
